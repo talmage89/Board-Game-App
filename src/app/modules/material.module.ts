@@ -10,7 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [],
@@ -24,7 +24,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTableModule
   ],
   exports: [
     MatToolbarModule,
@@ -35,7 +36,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTableModule
   ]
 })
 export class MaterialModule { }
