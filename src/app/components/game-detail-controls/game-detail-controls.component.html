@@ -1,1 +1,8 @@
-<p>game-detail-controls works!</p>
+<div class="controls">
+    <div class="status">
+        <div>Status: </div>
+        <div>{{ownedGames[game?.id] ? 'Owned' : wishListGames[game?.id] ? 'On Wishlist' : 'n/a'}}</div>
+    </div>
+    <button mat-raised-button color="primary" (click)="addToOwned()">{{ownedGames[game?.id] ? 'Remove from owned' : 'Add to owned' }}</button>
+    <button mat-raised-button color="primary" (click)="addToWishlist()">{{wishListGames[game?.id] ? 'Remove from wishlist' : 'Add to wishlist' }}</button>
+</div>
