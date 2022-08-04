@@ -3,6 +3,7 @@ import { ListType } from 'src/app/enums/list-type';
 import { Game } from 'src/app/interfaces/game';
 import { GameService } from 'src/app/services/game.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { Router } from '@angular/router';
 import * as _ from 'lodash';
 
 @Component({
@@ -18,7 +19,8 @@ export class GameSearchComponent implements OnInit {
 
   constructor(
     private gameService: GameService,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -57,5 +59,9 @@ export class GameSearchComponent implements OnInit {
       }
       this.localStorageService.saveGame(game, ListType.WISH_LIST);
     }
+  }
+
+  goToGameDetails(game: Game): void {
+    this.router.navigate(['./game-details', {gameId: game.id}]);
   }
 }
